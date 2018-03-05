@@ -1,0 +1,31 @@
+{
+    "name": "traderinteractive/filter-dates",
+    "description": "A filtering implementation for verifying dates",
+    "keywords": [
+        "utility",
+        "dates",
+        "date",
+        "datetime",
+        "datetimezone",
+        "timezone"
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "license": "MIT",
+    "require": {
+        "php": "^7.0",
+        "traderinteractive/exceptions": "^1.0"
+    },
+    "suggest": {
+        "ext-timezonedb": "The latest version of the timezone database"
+    },
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^1.0",
+        "phpunit/phpunit": "^6.0",
+        "squizlabs/php_codesniffer": "^3.2"
+    },
+    "autoload": {
+        "psr-4": { "TraderInteractive\\": "src/" }
+    }
+}
