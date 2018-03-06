@@ -46,7 +46,7 @@ final class DateTimeZoneTest extends TestCase
      * @test
      * @covers ::filter
      * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value not a non-empty string
+     * @expectedExceptionMessage Value failed filtering, $allowNull is set to false
      *
      * @return void
      */
