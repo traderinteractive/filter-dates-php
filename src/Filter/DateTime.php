@@ -31,7 +31,7 @@ class DateTime
             return null;
         }
 
-        if ($value instanceof \DateTime) {
+        if ($value instanceof DateTimeStandard) {
             return $value;
         }
 
@@ -43,7 +43,7 @@ class DateTime
             throw new FilterException('$value is not a non-empty string');
         }
 
-        return new \DateTime($value, $timezone);
+        return new DateTimeStandard($value, $timezone);
     }
 
     /**
@@ -58,7 +58,7 @@ class DateTime
      */
     public static function format(DateTimeInterface $dateTime, string $format = 'c') : string
     {
-        if (!is_string($format) || trim($format) === '') {
+        if (empty(trim($format))) {
             throw new \InvalidArgumentException('$format is not a non-empty string');
         }
 

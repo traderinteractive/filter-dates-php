@@ -17,7 +17,6 @@ class DateTimeZone
      *
      * @return \DateTimeZone|null
      *
-     * @throws \InvalidArgumentException Thrown if $allowNull was not a boolean value.
      * @throws FilterException if the value did not pass validation.
      */
     public static function filter($value, bool $allowNull = false)

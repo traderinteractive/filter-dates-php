@@ -148,4 +148,19 @@ final class DateTimeTest extends TestCase
         $now = new \DateTime();
         $this->assertSame($now->format('Y-m-d H:i:s'), DateTime::format($now, 'Y-m-d H:i:s'));
     }
+
+    /**
+     * Verify basic behavior of format().
+     *
+     * @test
+     * @covers ::format
+     *
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage $format is not a non-empty string
+     */
+    public function formatWithEmptyFormat()
+    {
+        $now = new \DateTime();
+        $this->assertSame($now->format('Y-m-d H:i:s'), DateTime::format($now, '          '));
+    }
 }
