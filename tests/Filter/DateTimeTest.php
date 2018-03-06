@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
  * Unit tests for the \TraderInteractive\Filter\DateTime class.
  *
  * @coversDefaultClass \TraderInteractive\Filter\DateTime
+ * @covers ::<private>
  */
 final class DateTimeTest extends TestCase
 {
