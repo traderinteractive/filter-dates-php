@@ -27,7 +27,7 @@ class DateTime
      */
     public static function filter($value, bool $allowNull = false, DateTimeZoneStandard $timezone = null)
     {
-        if ($value === null && $allowNull) {
+        if (self::valueIsNullAndValid($allowNull, $value)) {
             return null;
         }
 
@@ -63,5 +63,13 @@ class DateTime
         }
 
         return $dateTime->format($format);
+    }
+
+    private static function valueIsNullAndValid(bool $allowNull, $value = null) : bool
+    {
+        if ($allowNull === false && $value === null) {
+            throw new FilterException('Value failed filtering, $allowNull is set to false');
+        }
+        return $allowNull === true && $value === null;
     }
 }

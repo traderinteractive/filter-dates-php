@@ -90,7 +90,7 @@ final class DateTimeTest extends TestCase
      * @test
      * @covers ::filter
      * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value is not a non-empty string
+     * @expectedExceptionMessage Value failed filtering, $allowNull is set to false
      */
     public function filterNullNotAllowed()
     {
