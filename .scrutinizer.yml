@@ -16,7 +16,7 @@ tools:
     php_pdepend: true
     php_sim: true
 build_failure_conditions:
-    - 'elements.rating(< A).new.exists'
-    - 'issues.label("coding-style").new.exists'
-    - 'issues.severity(>= MAJOR).new.exists'
+    - 'elements.rating(< A).exists'
+    - 'issues.label("coding-style").exists'
+    - 'issues.severity(>= MAJOR).exists'
     - 'project.metric("scrutinizer.quality", < 9)'
