@@ -41,19 +41,19 @@ class TimeOfDayFilterTest extends TestCase
             ],
             [
                 'value' => '1:1:1',
-                'message' => '$value must be in the correct format HH:MM:SS',
+                'message' => TimeOfDayFilter::INCORRECT_FORMAT_ERROR,
             ],
             [
                 'value' => null,
-                'message' => '$value must be a non-empty string',
+                'message' => TimeOfDayFilter::NON_EMPTY_STRING_ERROR,
             ],
             [
                 'value' => '',
-                'message' => '$value must be a non-empty string',
+                'message' => TimeOfDayFilter::NON_EMPTY_STRING_ERROR,
             ],
             [
                 'value' => "\n\t    \n",
-                'message' => '$value must be a non-empty string',
+                'message' => TimeOfDayFilter::NON_EMPTY_STRING_ERROR,
             ],
         ];
     }

@@ -9,6 +9,16 @@ final class TimeOfDayFilter
     /**
      * @var string
      */
+    const NON_EMPTY_STRING_ERROR = '$value must be a non-empty string';
+
+    /**
+     * @var string
+     */
+    const INCORRECT_FORMAT_ERROR = '$value must be in the correct format HH:MM:SS';
+
+    /**
+     * @var string
+     */
     const TIME_OF_DAY_REGEX = '/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/';
 
     /**
@@ -23,11 +33,11 @@ final class TimeOfDayFilter
     public static function filter($value) : string
     {
         if (!is_string($value) || trim($value) === '') {
-            throw new FilterException('$value must be a non-empty string');
+            throw new FilterException(self::NON_EMPTY_STRING_ERROR);
         }
 
         if (preg_match(self::TIME_OF_DAY_REGEX, $value) === 0) {
-            throw new FilterException('$value must be in the correct format HH:MM:SS');
+            throw new FilterException(self::INCORRECT_FORMAT_ERROR);
         }
 
         return $value;
