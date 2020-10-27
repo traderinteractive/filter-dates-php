@@ -1,5 +1,6 @@
 /coverage/
 /vendor/
 /clover.xml
+phpcs.xml
 phpunit.xml
 composer.lock
