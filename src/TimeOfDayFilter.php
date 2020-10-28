@@ -9,12 +9,12 @@ final class TimeOfDayFilter
     /**
      * @var string
      */
-    const NON_EMPTY_STRING_ERROR = '$value must be a non-empty string';
+    const NON_EMPTY_STRING_ERROR = 'Value must be a non-empty string';
 
     /**
      * @var string
      */
-    const INCORRECT_FORMAT_ERROR = '$value must be in the correct format HH:MM:SS';
+    const INCORRECT_FORMAT_ERROR = 'Value must be in the format HH:MM:SS';
 
     /**
      * @var string
