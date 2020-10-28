@@ -59,6 +59,16 @@ The following checks that `$value` is a timezone
 $timezone = \TraderInteractive\Filter\DateTimeZone::filter('America/New_York');
 ```
 
+#### TimeOfDayFilter::filter
+
+This will filter values as a time-of-day string in the format of `HH:MM:SS`
+
+The following checks that `$value` is a valid time-of-day string
+
+```php
+$timeOfDay = \TraderInteractive\Filter\TimeOfDayFilter::filter('12:00:59');
+```
+
 ## Contact
 
 Developers may be contacted at:
