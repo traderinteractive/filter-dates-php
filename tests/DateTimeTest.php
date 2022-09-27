@@ -49,13 +49,13 @@ final class DateTimeTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value is not a non-empty string
      *
      * @return void
      */
     public function filterEmptyValue()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('$value is not a non-empty string');
         DateTime::filter("\t \n");
     }
 
@@ -64,13 +64,13 @@ final class DateTimeTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value is not a non-empty string
      *
      * @return void
      */
     public function filterInvalidValue()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('$value is not a non-empty string');
         DateTime::filter(true);
     }
 
@@ -90,11 +90,11 @@ final class DateTimeTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage Value failed filtering, $allowNull is set to false
      */
     public function filterNullNotAllowed()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('Value failed filtering, $allowNull is set to false');
         DateTime::filter(null, false);
     }
 
@@ -154,12 +154,11 @@ final class DateTimeTest extends TestCase
      *
      * @test
      * @covers ::format
-     *
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage $format is not a non-empty string
      */
     public function formatWithEmptyFormat()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('$format is not a non-empty string');
         $now = new \DateTime();
         $this->assertSame($now->format('Y-m-d H:i:s'), DateTime::format($now, '          '));
     }
