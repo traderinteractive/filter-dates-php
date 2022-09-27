@@ -46,13 +46,13 @@ final class DateTimeZoneTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage Value failed filtering, $allowNull is set to false
      *
      * @return void
      */
     public function filterNullNotAllowed()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('Value failed filtering, $allowNull is set to false');
         $this->assertNull(DateTimeZone::filter(null, false));
     }
 
@@ -75,11 +75,11 @@ final class DateTimeZoneTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage Unknown or bad timezone (INVALID)
      */
     public function filterInvalidName()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('Unknown or bad timezone (INVALID)');
         DateTimeZone::filter('INVALID');
     }
 
@@ -88,13 +88,13 @@ final class DateTimeZoneTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value not a non-empty string
      *
      * @return void
      */
     public function filterEmptyValue()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('$value not a non-empty string');
         DateTimeZone::filter("\n\t");
     }
 
@@ -103,13 +103,13 @@ final class DateTimeZoneTest extends TestCase
      *
      * @test
      * @covers ::filter
-     * @expectedException \TraderInteractive\Exceptions\FilterException
-     * @expectedExceptionMessage $value not a non-empty string
      *
      * @return void
      */
     public function filterNonStringArgument()
     {
+        $this->expectException(\TraderInteractive\Exceptions\FilterException::class);
+        $this->expectExceptionMessage('$value not a non-empty string');
         DateTimeZone::filter(42);
     }
 }
